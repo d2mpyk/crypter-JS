@@ -4,64 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" />
     <link rel="stylesheet" href="css/index.css">
-    <!-- Title -->
-    <title>Desafio - Encriptador</title>
+    <title>Encriptador</title>
 </head>
 
 <body>
-    <header class="w3-container w3-padding w3-margin">
-        <section class="w3-container w3-margin-top">
-            <img class="w3-image w3-hide-large w3-hide-medium" src="images/Logo0.5x.png" alt="">
-            <img class="w3-image w3-hide-large w3-hide-small" src="images/Logo1x.png" alt="">
-            <img class="w3-image w3-hide-medium w3-hide-small" src="images/Logo2x.png" alt="">
-        </section>
-    </header>
-
     <main>
-        <section id="sectionText" class="deleteme w3-center w3-padding w3-margin">
-            <h3 onclick="newInput();" class="w3-text-indigo" id="textTitle">Ingrese el texto aqui</h3>
-        </section>
-        <br><br><br><br><br><br><br>
-        <section class="w3-container"></section>
+        <!-- HEADER -->
+        <header>
+            <!-- HEADER SMALL -->
+            <section>
+                <img class="logo-small" src="images/Logo0.5x.png" alt="">
+                <textarea name="" id="text" cols="30" rows="10" placeholder="Inserta el texto aqui"></textarea>
+                <div class="botones">
+                    <button onclick="crypt();" class="boton1">Encriptar</button>
+                    <button onclick="decrypt();" class="boton2">Desencriptar</button>
+                </div>
+            </section>
+            <!-- HEADER MEDIUM -->
+            <section>
+                <img class="logo-medium" src="images/Logo1x.png" alt="">
+            </section>
+            <!-- HEADER LARGE -->
+            <section>
+                <img class="logo-large" src="images/Logo2x.png" alt="">
+            </section>
+        </header>
+        <!-- MAIN SMALL -->
+        <section id="sectionText" class=""></section>
+        <!-- MAIN MEDIUM -->
+        <section></section>
+        <!-- MAIN LARGE -->
+        <section></section>
     </main>
+    <footer>
+        <!-- FOOTER SMALL -->
+        <section>
 
-    <!-- Footer Small -->
-    <footer class="w3-container w3-hide-large w3-hide-medium">
-        <!-- Seccion de Botones-->
-        <section class="w3-panel w3-center w3-paddingw3-row">
-            <button onclick="crypt();"
-                class="w3-button w3-center w3-padding w3-round-xlarge w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row"
-                id="encriptar">Encriptar</button><br>
-            <button onclick="decrypt();"
-                class="w3-button w3-center w3-padding w3-round-xlarge w3-text-indigo w3-white w3-hover-indigo w3-hover-text-white w3-border w3-cell-row"
-                id="desencriptar">Desencriptar</button><br>
         </section>
-        <section id="sectionResult" class="w3-container w3-card-4 w3-padding w3-margin w3-center w3-round-xxlarge">
-            <h3 id="resultTitle">Ningun mensaje fue encontrado</h3>
-            <p id="messageResult" class="w3-center">Ingresa el texto que desees encriptar o desencriptar</p>
-        </section>
+        <!-- FOOTER MEDIUM -->
+        <section></section>
+        <!-- FOOTER LARGE -->
+        <section></section>
     </footer>
-    <!-- Footer Medium -->
-    <footer class="w3-image w3-hide-large w3-hide-small">
-        <!-- Seccion de Botones-->
-        <section class="w3-panel w3-center w3-paddingw3-row"></section>
-    </footer>
-    <!-- Footer Large -->
-    <footer class="w3-image w3-hide-medium w3-hide-small">
-        <!-- Seccion de Botones-->
-        <section class="w3-panel w3-center w3-paddingw3-row"></section>
-    </footer>
-    <!-- JS -->
-    <script defer src="js/index.js"></script>
-    <!-- JS Material Design -->
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 
 </html>
