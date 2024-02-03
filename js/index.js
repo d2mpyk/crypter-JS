@@ -1,15 +1,16 @@
 function newInput() {
     const section = document.getElementById('sectionText');
-    section.insertAdjacentHTML('beforeend', '<textarea class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" id="texto" cols="30" rows="5" placeholder="Ingrese el texto aqui"></textarea>');
+    section.insertAdjacentHTML('beforeend', '<textarea class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" id="texto" cols="30" rows="5" onfocus="true"></textarea>');
+    document.getElementById("texto").focus();
     const titulo = document.getElementById('textTitle');
     titulo.remove();
 }
 
 function crypt() {
-    let texto = document.querySelector('#texto').value;
-    if (texto === "")
+    let texto = document.querySelector('#texto');
+    if (!texto.value)
         alert('Por favor indique el texto que desea encryptar o desencryptar');
-    let cadena = texto.split('');
+    let cadena = texto.value.split('');
     //console.log(cadena);
     const vocales = ['a', 'e', 'i', 'o', 'u'];
     //console.log(vocales);
