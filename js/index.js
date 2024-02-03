@@ -1,6 +1,6 @@
 function newInput() {
     const section = document.getElementById('sectionText');
-    section.insertAdjacentHTML('beforeend', '<textarea class="w3-input w3-padding w3-left w3-border-0 w3-cell-row" cols="30" rows="12" id="texto" type="text" required pattern="[a-z]"></textarea><br>');
+    section.insertAdjacentHTML('beforeend', '<textarea class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" id="texto" cols="30" rows="5" placeholder="Ingrese el texto aqui"></textarea>');
     const titulo = document.getElementById('textTitle');
     titulo.remove();
 }
