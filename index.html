@@ -4,34 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/index.css">
     <title>Encriptador</title>
 </head>
 
 <body>
-    <main>
+    <main class="w3-container">
         <!-- HEADER -->
         <header>
             <!-- HEADER SMALL -->
-            <section>
-                <img class="logo-small" src="images/Logo0.5x.png" alt="">
-                <textarea name="" id="text" cols="30" rows="10" placeholder="Inserta el texto aqui"></textarea>
-                <div class="botones">
-                    <button onclick="crypt();" class="boton1">Encriptar</button>
-                    <button onclick="decrypt();" class="boton2">Desencriptar</button>
+            <section class="w3-hide-medium w3-hide-large">
+                <img class="w3-image w3-margin-top" src="images/Logo0.5x.png" alt="">
+                <textarea class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name=""
+                    id="text" cols="30" rows="5">
+
+                                    Ingrese el texto aqui</textarea>
+                <p class="w3-small"><span class="w3-badge w3-gray w3-text-white">!</span> Solo letras minusculas y sin
+                    acemtos</p>
+                <div class="w3-center">
+                    <button
+                        class="w3-block w3-padding w3-margin-bottom w3-round-large w3-indigo w3-hover-white w3-hover-text-indigo"
+                        onclick="crypt();">Encriptar</button>
+                    <button
+                        class="w3-block w3-padding w3-margin-bottom w3-round-large w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white"
+                        onclick="decrypt();">Desencriptar</button>
                 </div>
             </section>
             <!-- HEADER MEDIUM -->
-            <section>
-                <img class="logo-medium" src="images/Logo1x.png" alt="">
-            </section>
+            <section></section>
             <!-- HEADER LARGE -->
-            <section>
-                <img class="logo-large" src="images/Logo2x.png" alt="">
-            </section>
+            <section></section>
         </header>
         <!-- MAIN SMALL -->
-        <section id="sectionText" class=""></section>
+        <section id="sectionText" class="w3-hide-medium w3-hide-large"><br>
+            <div class="w3-card w3-center w3-margin w3-margin-top w3-padding w3-round-xxlarge">
+                <div id="SinResultado">
+                    <h3><strong>Ningun mensaje fue encontrado</strong></h3>
+                    <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                </div>
+                <div id="ConResultado"></div>
+            </div>
+        </section>
         <!-- MAIN MEDIUM -->
         <section></section>
         <!-- MAIN LARGE -->
