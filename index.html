@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
     <title>Encriptador</title>
 </head>
 
@@ -15,20 +16,18 @@
         <header>
             <!-- HEADER SMALL -->
             <section class="w3-hide-medium w3-hide-large">
-                <img class="w3-image w3-margin-top" src="images/Logo0.5x.png" alt="">
+                <img class="w3-image w3-margin-top w3-margin-bottom" src="images/Logo0.5x.png" alt="">
                 <textarea class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name=""
-                    id="text" cols="30" rows="5">
-
-                                    Ingrese el texto aqui</textarea>
+                    id="texto" cols="30" rows="5" placeholder="Ingrese el texto aqui"></textarea>
                 <p class="w3-small"><span class="w3-badge w3-gray w3-text-white">!</span> Solo letras minusculas y sin
                     acemtos</p>
                 <div class="w3-center">
                     <button
                         class="w3-block w3-padding w3-margin-bottom w3-round-large w3-indigo w3-hover-white w3-hover-text-indigo"
-                        onclick="crypt();">Encriptar</button>
+                        onclick="crypt();" id="encriptar">Encriptar</button>
                     <button
                         class="w3-block w3-padding w3-margin-bottom w3-round-large w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white"
-                        onclick="decrypt();">Desencriptar</button>
+                        onclick="decrypt();" id="">Desencriptar</button>
                 </div>
             </section>
             <!-- HEADER MEDIUM -->

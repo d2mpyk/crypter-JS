@@ -108,14 +108,11 @@ function decrypt() {
 function newResult() {
     const botonCrypt = document.getElementById('encriptar');
     botonCrypt.classList.toggle('w3-disable');
-    const section = document.getElementById('sectionResult');
-    section.insertAdjacentHTML('afterbegin', '<textarea class="w3-input w3-padding w3-margin-top w3-left w3-border-0 w3-row" cols="30" rows="5" id="resultado" type="text">');
+    document.getElementById('SinResultado').style.display = "none";
+    const section = document.getElementById('ConResultado');
+    section.insertAdjacentHTML('afterbegin', '<textarea class="w3-input w3-padding w3-margin-top w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="5" id="resultado" type="text">');
     section.insertAdjacentHTML('beforeend', '<p id="parrafoCopy">Presione Copiar para mover el texto al cuadro principal</p>');
-    section.insertAdjacentHTML('beforeend', '<button onclick="copy();" id="copy" class="w3-button w3-center w3-padding w3-round-xlarge w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row">Copiar</button>');
-    const titulo = document.getElementById('resultTitle');
-    titulo.remove();
-    const parrafo = document.getElementById('messageResult');
-    parrafo.remove();
+    section.insertAdjacentHTML('beforeend', '<button onclick="copy();" id="copy" class="w3-button w3-center w3-margin-bottom w3-padding w3-round-large w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row">Copiar</button>');
 }
 
 function copy() {
@@ -127,7 +124,6 @@ function copy() {
     parrafo.remove();
     const boton = document.getElementById('copy');
     boton.remove();
-    const section = document.getElementById('sectionResult');
-    section.insertAdjacentHTML('afterbegin', '<h3 id="resultTitle">Ningun mensaje fue encontrado</h3><p id="messageResult" class="w3-center">Ingresa el texto que desees encriptar o desencriptar</p>');
+    document.getElementById('SinResultado').style.display = "block";
 }
 
