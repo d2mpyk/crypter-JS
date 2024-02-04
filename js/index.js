@@ -36,7 +36,7 @@ function crypt() {
         location.reload();
     }
     else {
-        let regex = /^[ a-z]+$/g;
+        let regex = /^[a-z ]+$/g;
         if (document.querySelector('#texto').value.match(regex) == null) {
             alert('Por favor ingrese solo letras minusculas y sin acentos');
             location.reload();
@@ -45,7 +45,7 @@ function crypt() {
     let texto = document.querySelector('#texto').value;
     let cadena = texto.split('');
     //console.log(cadena);
-    const vocales = ['a', 'e', 'i', 'o', 'u'];
+    const vocales = ['a', 'e', 'i', 'o', 'u', ' '];
     //console.log(vocales);
     let crypt = [];
     for (let index = 0; index < cadena.length; index++) {
@@ -81,6 +81,9 @@ function crypt() {
                 crypt.push('a');
                 crypt.push('t');
             }
+            if (element === ' ') {
+                crypt.push(' ');
+            }
             //console.log(crypt);
         } else {
             crypt.push(element);
@@ -107,7 +110,7 @@ function decrypt() {
         location.reload();
     }
     else {
-        let regex = /^[ a-z]+$/g;
+        let regex = /^[a-z ]+$/g;
         if (document.querySelector('#texto').value.match(regex) == null) {
             alert('Por favor ingrese solo letras minusculas y sin acentos');
             location.reload();
@@ -116,7 +119,7 @@ function decrypt() {
     let texto = document.querySelector('#texto').value;
     let cadena = texto.split('');
     //console.log(cadena);
-    const vocales = ['a', 'e', 'i', 'o', 'u'];
+    const vocales = ['a', 'e', 'i', 'o', 'u', ' '];
     //console.log(vocales);
     let decrypt = [];
     let i = cadena.length;
@@ -143,6 +146,10 @@ function decrypt() {
             if (element === 'u') {
                 decrypt.push('u');
                 i -= 4; j += 4; continue;
+            }
+            if (element === ' ') {
+                decrypt.push(' ');
+                i -= 1; j += 1; continue;
             }
         } else {
             decrypt.push(element);
