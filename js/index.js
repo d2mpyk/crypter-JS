@@ -1,20 +1,39 @@
-function newInput() {
-    const section = document.getElementById('sectionText');
-    section.insertAdjacentHTML('beforeend', '<textarea class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" id="texto" cols="30" rows="5" onfocus="true"></textarea>');
+function newInputSmall() {
+    if (document.getElementById('texto') !== null)
+        document.getElementById('texto').remove();
+    const section = document.getElementById('sectionTextSmall');
+    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="5" onfocus="true"></textarea>');
     document.getElementById("texto").focus();
-    const titulo = document.getElementById('textTitle');
-    titulo.remove();
+    document.getElementById('textTitleSmall').remove();
+}
+
+function newInputMedium() {
+    if (document.getElementById('texto') !== null)
+        document.getElementById('texto').remove();
+    const section = document.getElementById('sectionTextMedium');
+    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="6" onfocus="true"></textarea>');
+    document.getElementById("texto").focus();
+    document.getElementById('textTitleMedium').remove();
 }
 
 function crypt() {
-    let texto = document.querySelector('#texto').value;
-    if (texto === "")
+    if (document.querySelector('#texto') == null) {
         alert('Por favor indique el texto que desea encriptar');
-    let regex = /^[ a-z]+$/g;
-    if (texto.match(regex) == null) {
-        alert('Por favor ingrese solo letras minusculas y sin acentos');
         location.reload();
     }
+
+    if (document.querySelector('#texto').value === "") {
+        alert('Por favor indique el texto que desea encriptar');
+        location.reload();
+    }
+    else {
+        let regex = /^[ a-z]+$/g;
+        if (document.querySelector('#texto').value.match(regex) == null) {
+            alert('Por favor ingrese solo letras minusculas y sin acentos');
+            location.reload();
+        }
+    }
+    let texto = document.querySelector('#texto').value;
     let cadena = texto.split('');
     //console.log(cadena);
     const vocales = ['a', 'e', 'i', 'o', 'u'];
@@ -65,14 +84,23 @@ function crypt() {
 }
 
 function decrypt() {
-    let texto = document.querySelector('#texto').value;
-    if (texto === "")
+    if (document.querySelector('#texto') == null) {
         alert('Por favor indique el texto que desea desencriptar');
-    let regex = /^[ a-z]+$/g;
-    if (texto.match(regex) == null) {
-        alert('Por favor ingrese solo letras minusculas y sin acentos');
         location.reload();
     }
+
+    if (document.querySelector('#texto').value === "") {
+        alert('Por favor indique el texto que desea desencriptar');
+        location.reload();
+    }
+    else {
+        let regex = /^[ a-z]+$/g;
+        if (document.querySelector('#texto').value.match(regex) == null) {
+            alert('Por favor ingrese solo letras minusculas y sin acentos');
+            location.reload();
+        }
+    }
+    let texto = document.querySelector('#texto').value;
     let cadena = texto.split('');
     //console.log(cadena);
     const vocales = ['a', 'e', 'i', 'o', 'u'];
