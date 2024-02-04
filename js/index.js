@@ -16,6 +16,15 @@ function newInputMedium() {
     document.getElementById('textTitleMedium').remove();
 }
 
+function newInputLarge() {
+    if (document.getElementById('texto') !== null)
+        document.getElementById('texto').remove();
+    const section = document.getElementById('sectionTextLarge');
+    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="10" onfocus="true"></textarea>');
+    document.getElementById("texto").focus();
+    document.getElementById('textTitleLarge').remove();
+}
+
 function crypt() {
     if (document.querySelector('#texto') == null) {
         alert('Por favor indique el texto que desea encriptar');
@@ -146,7 +155,9 @@ function decrypt() {
 function newResult() {
     const botonCrypt = document.getElementById('encriptar');
     botonCrypt.classList.toggle('w3-disable');
-    document.getElementById('SinResultado').style.display = "none";
+    if(document.getElementById('SinResultado') !== null){
+        console.log(document.getElementById('SinResultado'));
+        document.getElementById('SinResultado').style.display = "none";}
     if (document.getElementById('resultado') !== null)
         document.getElementById('resultado').remove();
     if (document.getElementById('parrafoCopy') !== null)

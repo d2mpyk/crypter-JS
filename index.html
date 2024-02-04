@@ -39,7 +39,8 @@
                     <h3 onclick="newInputMedium();" class="w3-text-indigo" id="textTitleMedium">Ingrese el texto
                         aqui<br><br><br><br><br><br></h3>
                 </section>
-                <p class="w3-small w3-padding"><span class="w3-badge w3-gray w3-text-white">!</span> Solo letras minúsculas y sin acentos</p>
+                <p class="w3-small w3-padding"><span class="w3-badge w3-gray w3-text-white">!</span> Solo letras
+                    minúsculas y sin acentos</p>
                 <div class="w3-bar w3-center">
                     <div class="w3-half w3-padding">
                         <button
@@ -53,11 +54,9 @@
                     </div>
                 </div>
             </section>
-            <!-- HEADER LARGE -->
-            <section></section>
         </header>
         <!-- MAIN SMALL AND MEDIUM -->
-        <section id="sectionText" class="w3-hide-large"><br>
+        <section id="sectionTextMedium" class="w3-hide-large"><br>
             <div class="w3-card w3-center w3-margin w3-margin-top w3-padding w3-round-xxlarge">
                 <div id="SinResultado">
                     <h3><strong>Ningún mensaje fue encontrado</strong></h3>
@@ -66,8 +65,47 @@
                 <div id="ConResultado"></div>
             </div>
         </section>
+
         <!-- MAIN LARGE -->
-        <section></section>
+        <!-- HEADER LARGE -->
+        <section class="w3-container w3-hide-small w3-hide-medium">
+            <section class="w3-col" style="width: 60%;">
+                <img class="w3-container w3-col w3-image w3-margin-top w3-margin-bottom w3-padding-top"
+                    style="width: 20%;" src="images/Logo2x.png" alt="">
+                <div id="header-large" class="w3-container w3-col w3-margin-top w3-hide-small w3-hide-medium"
+                    style="width: 80%;">
+                    <section id="sectionTextLarge" class="w3-padding"><br><br><br>
+                        <h3 onclick="newInputLarge();" class="w3-text-indigo" id="textTitleLarge">Ingrese el texto
+                            aqui<br><br><br><br><br><br><br><br><br><br></h3>
+                    </section>
+                    <p class="w3-small w3-padding"><span class="w3-badge w3-gray w3-text-white">!</span> Solo letras
+                        minúsculas
+                        y sin acentos</p>
+                    <div class="w3-bar w3-center">
+                        <div class="w3-half w3-padding">
+                            <button
+                                class="w3-block w3-border w3-padding w3-round-large w3-indigo w3-hover-white w3-hover-text-indigo"
+                                onclick="crypt();" id="encriptar">Encriptar</button>
+                        </div>
+                        <div class="w3-half w3-padding">
+                            <button
+                                class="w3-block w3-border w3-padding w3-round-large w3-white w3-text-indigo w3-hover-indigo w3-hover-text-white"
+                                onclick="decrypt();" id="desencriptar">Desencriptar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="sectionTextLarge" class="w3-container w3-col" style="width: 40%;"><br>
+                <div class="w3-card w3-center w3-margin w3-margin-top w3-padding w3-round-xxlarge"><br><br><br>
+                    <div id="SinResultado">
+                        <img class="w3-image w3-margin-top w3-margin-bottom w3-padding-top" src="images/Muneco.png"
+                            alt="">
+                        <h3><strong>Ningún mensaje fue encontrado</strong></h3>
+                        <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                    </div>
+                    <div id="ConResultado"></div>
+                </div>
+            </section>
     </main>
     <footer>
         <!-- FOOTER SMALL -->
