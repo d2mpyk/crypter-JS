@@ -7,10 +7,15 @@ function newInput() {
 }
 
 function crypt() {
-    let texto = document.querySelector('#texto');
-    if (texto.value)
-        alert('Por favor indique el texto que desea encryptar o desencryptar');
-    let cadena = texto.value.split('');
+    let texto = document.querySelector('#texto').value;
+    if (texto === "")
+        alert('Por favor indique el texto que desea encriptar');
+    let regex = /^[ a-z]+$/g;
+    if (texto.match(regex) == null) {
+        alert('Por favor ingrese solo letras minusculas y sin acentos');
+        location.reload();
+    }
+    let cadena = texto.split('');
     //console.log(cadena);
     const vocales = ['a', 'e', 'i', 'o', 'u'];
     //console.log(vocales);
@@ -61,8 +66,12 @@ function crypt() {
 
 function decrypt() {
     let texto = document.querySelector('#texto').value;
-    if (texto === "") {
-        alert('Por favor indique el texto que desea encryptar o desencryptar');
+    if (texto === "")
+        alert('Por favor indique el texto que desea desencriptar');
+    let regex = /^[ a-z]+$/g;
+    if (texto.match(regex) == null) {
+        alert('Por favor ingrese solo letras minusculas y sin acentos');
+        location.reload();
     }
     let cadena = texto.split('');
     //console.log(cadena);
@@ -110,11 +119,11 @@ function newResult() {
     const botonCrypt = document.getElementById('encriptar');
     botonCrypt.classList.toggle('w3-disable');
     document.getElementById('SinResultado').style.display = "none";
-    if (document.getElementById('resultado') !== null) 
+    if (document.getElementById('resultado') !== null)
         document.getElementById('resultado').remove();
-    if(document.getElementById('parrafoCopy') !== null)
+    if (document.getElementById('parrafoCopy') !== null)
         document.getElementById('parrafoCopy').remove();
-    if(document.getElementById('copy') !== null)
+    if (document.getElementById('copy') !== null)
         document.getElementById('copy').remove();
     const section = document.getElementById('ConResultado');
     section.insertAdjacentHTML('afterbegin', '<textarea class="w3-input w3-padding w3-margin-top w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="5" id="resultado" type="text">');
