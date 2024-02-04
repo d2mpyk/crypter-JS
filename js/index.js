@@ -89,7 +89,11 @@ function crypt() {
     }
     texto = crypt.join('');
     newResult();
-    document.querySelector('#resultado').value = texto;
+    if(document.querySelector('#resultadoSmallMedium') !== null)
+        document.querySelector('#resultadoSmallMedium').value = texto;
+    if(document.querySelector('#resultadoLarge') !== null)
+        document.querySelector('#resultadoLarge').value = texto;
+    document.querySelector('#texto').value = "";
 }
 
 function decrypt() {
@@ -149,36 +153,67 @@ function decrypt() {
     }
     texto = decrypt.join('');
     newResult();
-    document.querySelector('#resultado').value = texto;
+    if(document.querySelector('#resultadoSmallMedium') !== null)
+        document.querySelector('#resultadoSmallMedium').value = texto;
+    if(document.querySelector('#resultadoLarge') !== null)
+        document.querySelector('#resultadoLarge').value = texto;
+    document.querySelector('#texto').value = "";
 }
 
 function newResult() {
     const botonCrypt = document.getElementById('encriptar');
     botonCrypt.classList.toggle('w3-disable');
-    if(document.getElementById('SinResultado') !== null){
-        console.log(document.getElementById('SinResultado'));
-        document.getElementById('SinResultado').style.display = "none";}
-    if (document.getElementById('resultado') !== null)
-        document.getElementById('resultado').remove();
-    if (document.getElementById('parrafoCopy') !== null)
-        document.getElementById('parrafoCopy').remove();
-    if (document.getElementById('copy') !== null)
-        document.getElementById('copy').remove();
-    const section = document.getElementById('ConResultado');
-    section.insertAdjacentHTML('afterbegin', '<textarea class="w3-input w3-padding w3-margin-top w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="5" id="resultado" type="text">');
-    section.insertAdjacentHTML('beforeend', '<p id="parrafoCopy">Presione Copiar para mover el texto al cuadro principal</p>');
-    section.insertAdjacentHTML('beforeend', '<button onclick="copy();" id="copy" class="w3-button w3-center w3-margin-bottom w3-padding w3-round-large w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row">Copiar</button>');
+
+    if(document.getElementById('SinResultadoSmallMedium') !== null)
+        document.getElementById('SinResultadoSmallMedium').style.display = "none";
+    if (document.getElementById('resultadoSmallMedium') !== null)
+        document.getElementById('resultadoSmallMedium').remove();
+    if (document.getElementById('parrafoCopySmallMedium') !== null)
+        document.getElementById('parrafoCopySmallMedium').remove();
+    if (document.getElementById('copySmallMedium') !== null)
+        document.getElementById('copySmallMedium').remove();
+    if(document.getElementById('ConResultadoSmallMedium') !== null)
+        (document.getElementById('ConResultadoSmallMedium')).insertAdjacentHTML('afterbegin', '<textarea id="resultadoSmallMedium" class="w3-input w3-padding w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="4" type="text">');
+        (document.getElementById('ConResultadoSmallMedium')).insertAdjacentHTML('beforeend', '<p id="parrafoCopySmallMedium">Presione Copiar para mover el texto al cuadro principal</p>');
+        (document.getElementById('ConResultadoSmallMedium')).insertAdjacentHTML('beforeend', '<button onclick="copy();" id="copySmallMedium" class="w3-button w3-center w3-margin-bottom w3-padding w3-round-large w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row">Copiar</button>');
+        
+    if(document.getElementById('SinResultadoLarge') !== null)
+        document.getElementById('SinResultadoLarge').style.display = "none";
+    if (document.getElementById('resultadoLarge') !== null)
+        document.getElementById('resultadoLarge').remove();
+    if (document.getElementById('parrafoCopyLarge') !== null)
+        document.getElementById('parrafoCopyLarge').remove();
+    if (document.getElementById('copyLarge') !== null)
+        document.getElementById('copyLarge').remove();
+    if(document.getElementById('ConResultadoLarge') !== null)
+        (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('afterbegin', '<textarea id="resultadoLarge" class="w3-input w3-padding w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="15" type="text">');
+        (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('beforeend', '<p id="parrafoCopyLarge">Presione Copiar para mover el texto al cuadro principal</p>');
+        (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('beforeend', '<button onclick="copy();" id="copyLarge" class="w3-button w3-center w3-margin-bottom w3-padding w3-round-large w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row">Copiar</button>');
 }
 
 function copy() {
-    const resultado = document.querySelector('#resultado');
-    document.querySelector('#texto').value = resultado.value;
-    document.querySelector('#resultado').value = '';
-    resultado.remove();
-    const parrafo = document.getElementById('parrafoCopy');
-    parrafo.remove();
-    const boton = document.getElementById('copy');
-    boton.remove();
-    document.getElementById('SinResultado').style.display = "block";
+    if(document.querySelector('#resultadoSmallMedium') !== null){
+        document.querySelector('#texto').value = document.querySelector('#resultadoSmallMedium').value;
+        document.querySelector('#resultadoSmallMedium').value = '';
+        document.querySelector('#resultadoSmallMedium').remove();
+    }
+    if(document.getElementById('parrafoCopySmallMedium') !== null)
+        document.getElementById('parrafoCopySmallMedium').remove();
+    if(document.getElementById('copySmallMedium') !== null)
+        document.getElementById('copySmallMedium').remove();
+    if(document.getElementById('SinResultadoSmallMedium') !== null)
+        document.getElementById('SinResultadoSmallMedium').style.display = "block";
+
+    if(document.querySelector('#resultadoLarge') !== null){
+        document.querySelector('#texto').value = document.querySelector('#resultadoLarge').value;
+        document.querySelector('#resultadoLarge').value = '';
+        document.querySelector('#resultadoLarge').remove();
+    }
+    if(document.getElementById('parrafoCopyLarge') !== null)
+        document.getElementById('parrafoCopyLarge').remove();
+    if(document.getElementById('copyLarge') !== null)
+        document.getElementById('copyLarge').remove();
+    if(document.getElementById('SinResultadoLarge') !== null)
+        document.getElementById('SinResultadoLarge').style.display = "block";
 }
 
