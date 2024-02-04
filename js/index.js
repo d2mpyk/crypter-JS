@@ -2,7 +2,7 @@ function newInputSmall() {
     if (document.getElementById('texto') !== null)
         document.getElementById('texto').remove();
     const section = document.getElementById('sectionTextSmall');
-    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="5" onfocus="true"></textarea>');
+    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="4" onfocus="true"></textarea>');
     document.getElementById("texto").focus();
     document.getElementById('textTitleSmall').remove();
 }
@@ -11,7 +11,7 @@ function newInputMedium() {
     if (document.getElementById('texto') !== null)
         document.getElementById('texto').remove();
     const section = document.getElementById('sectionTextMedium');
-    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="6" onfocus="true"></textarea>');
+    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="5" onfocus="true"></textarea>');
     document.getElementById("texto").focus();
     document.getElementById('textTitleMedium').remove();
 }
@@ -20,7 +20,7 @@ function newInputLarge() {
     if (document.getElementById('texto') !== null)
         document.getElementById('texto').remove();
     const section = document.getElementById('sectionTextLarge');
-    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="10" onfocus="true"></textarea>');
+    section.insertAdjacentHTML('beforeend', '<textarea id="texto" class="w3-input w3-margin-bottom w3-border-0 w3-center w3-text-indigo w3-xlarge" name="" cols="30" rows="7" onfocus="true"></textarea>');
     document.getElementById("texto").focus();
     document.getElementById('textTitleLarge').remove();
 }
@@ -193,7 +193,7 @@ function newResult() {
     if (document.getElementById('copyLarge') !== null)
         document.getElementById('copyLarge').remove();
     if(document.getElementById('ConResultadoLarge') !== null)
-        (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('afterbegin', '<textarea id="resultadoLarge" class="w3-input w3-padding w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="15" type="text">');
+        (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('afterbegin', '<textarea id="resultadoLarge" class="w3-input w3-padding w3-margin-bottom w3-left w3-border-0 w3-row" cols="30" rows="12" type="text">');
         (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('beforeend', '<p id="parrafoCopyLarge">Presione Copiar para mover el texto al cuadro principal</p>');
         (document.getElementById('ConResultadoLarge')).insertAdjacentHTML('beforeend', '<button onclick="copy();" id="copyLarge" class="w3-button w3-center w3-margin-bottom w3-padding w3-round-large w3-text-white w3-indigo w3-hover-white w3-hover-text-indigo w3-cell-row">Copiar</button>');
 }
