@@ -36,7 +36,7 @@ function crypt() {
         location.reload();
     }
     else {
-        let regex = /^[a-z ]+$/g;
+        let regex = /^[a-z .,\/#!?$%\^&\*;:{}=\-_`~()”“"…]+$/g;
         if (document.querySelector('#texto').value.match(regex) == null) {
             alert('Por favor ingrese solo letras minusculas y sin acentos');
             location.reload();
@@ -110,7 +110,7 @@ function decrypt() {
         location.reload();
     }
     else {
-        let regex = /^[a-z ]+$/g;
+        let regex = /^[a-z .,\/#!?$%\^&\*;:{}=\-_`~()”“"…]+$/g;
         if (document.querySelector('#texto').value.match(regex) == null) {
             alert('Por favor ingrese solo letras minusculas y sin acentos');
             location.reload();
